@@ -29,6 +29,10 @@ public class BatchConfig {
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
+    //Tasllet são usadas para pequenas tarefas, exemplo pre processamento como limpesa de arquivos criação de diretorios
+    //etc tasklet é executado repetidamente a té o status de completude
+    //Chunks usados para tarefas pesada/ leitura/processamento e escrita;
+    // cada chunk possui sua propria transação 
     private Step imprimeOlaStep() {
         return stepBuilderFactory
                 .get("imprimeOlaSetp")
